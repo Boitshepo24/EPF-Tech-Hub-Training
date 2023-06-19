@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function lcm(a, b) {
+  // Find the greatest common divisor of a and b.
+  let gcd = a;
+  while (b !== 0) {
+    gcd = b;
+    b = a % b;
+    a = gcd;
+  }
+
+  // Return the product of a and b, divided by their greatest common divisor.
+  return a * b / gcd;
+}
+
+function smallestDivisible(num) {
+  // Initialize the smallest divisible number to 1.
+  let smallestDivisible = 1;
+
+  // For each number from 2 to num, find the LCM of smallestDivisible and the current number.
+  for (let i = 2; i <= num; i++) {
+    smallestDivisible = lcm(smallestDivisible, i);
+  }
+
+  // Return the smallest divisible number.
+  return smallestDivisible;
+}
+
+const smallestNumber = smallestDivisible(10);
+console.log(`The smallest positive number that is evenly divisible by all of the numbers from 1 to 20 is ${smallestNumber}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let largestPalindrome = 0;
+    function findLargestPalindrome(){
+        for (let i = 100; i <1000; i++){
+            for (let j = 100; j<1000; j++){
+                let product = i * j;
+                if (product > largestPalindrome && String(product) === String(product).split('').reverse().join('')){
+                     largestPalindrome = product;
+                }
+       
+            }
+        }
+    document.write(largestPalindrome);
+    }
+  findLargestPalindrome();
+</script>
+</html>
